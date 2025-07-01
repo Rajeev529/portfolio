@@ -1,0 +1,21 @@
+{% extends 'baseAdmin.html' %}
+{% block content %}
+{% csrf_token %}
+<h3>Form in TabA</h3>
+<h3>{{msg}}</h3>
+    
+    <form method="post" action="/fillproject">
+        {% csrf_token %}
+        <label>Role:</label>
+        <input type="text" name="role" required>
+        <label>Image Url:</label>
+        <input type="url" name="image" required>
+        <label>Project Url:</label>
+        <input type="url" name="prj" required>
+        <label>Title:</label>
+        <input type="text" name="title" required>
+
+        
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

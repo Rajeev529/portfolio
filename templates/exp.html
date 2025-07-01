@@ -1,0 +1,29 @@
+{% extends 'baseAdmin.html' %}
+{% block content %}
+{% csrf_token %}
+<h3>Form in TabA</h3>
+<h3>{{msg}}</h3>
+<!-- class exp(models.Model):
+    key=models.BigIntegerField()
+    title=models.CharField()
+    desc=models.TextField()
+    cred=models.URLField() -->
+
+    <form action="/fillexp" method="post">
+        {% csrf_token %}
+        <label>Role:</label>
+        <input type="text" name="role" required>
+        <label>Key: </label>
+        <input type="text" name="key" required>
+        <label>Title: </label>
+        <input type="text" name="title" required>
+        <label>Descrition: </label>
+        <input type="text" name="desc" required>
+        <label>Credential: </label>
+        <input type="url" name="cred" required>
+        
+
+        
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

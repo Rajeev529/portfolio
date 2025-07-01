@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Sidebar Tabs (Radio Buttons) -->
+    <input type="radio" name="tab" id="tabA" checked>
+    <input type="radio" name="tab" id="tabB">
+    <input type="radio" name="tab" id="tabC">
+
+    <aside class="sidebar">
+      <h2>Admin Panel</h2>
+      <label for="work exp" class="tab-label"><a style="color: white;" href="/biodata">Biodata</a></label>
+      <label for="work exp" class="tab-label"><a style="color: white;" href="/project">Project</a></label>
+      <label for="work exp" class="tab-label"><a style="color: white;" href="/exp">Experiences</a></label>
+      
+    </aside>
+
+    <main class="content">
+      <section class="tab-content contentA">
+        {% block content %}
+        
+        {% endblock %}
+      </section>
+
+      <section class="tab-content contentB">
+        <h3>TabB Content</h3>
+        <p>This is content for TabB.</p>
+      </section>
+
+      <section class="tab-content contentC">
+        <h3>TabC Content</h3>
+        <p>This is content for TabC.</p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

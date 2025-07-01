@@ -1,0 +1,78 @@
+{% extends 'baseAdmin.html' %}
+{% block content %}
+<h3>Form in TabA</h3>
+<form method="post" action="/fillBiodata">
+    {% csrf_token %}
+    <label>Key:</label>
+    <input type="text" name="key" required>
+    <label>Role:</label>
+    <input type="text" name="role" required>
+
+    <label>Active:</label>
+    <!-- <input type="radio" value="false" name="istrue" required> -->
+    <input type="text" value="false" name="istrue" required>
+    <label>Name:</label>
+    <input type="text" name="name" required>
+
+    <label>dob:</label>
+    <input name="dob" required>
+    <label>Email:</label>
+    <input type="email" name="email" required>
+    <label>linkdin:</label>
+    <input name="linkdin" required>
+    <label>contact:</label>
+    <input name="contact" required>
+    <label>gitlink:</label>
+    <input name="gitlink" required>
+    <label>leetcode:</label>
+    <input name="leetcode" required>
+
+    <button type="submit">Submit</button>
+</form>
+
+<section class="tab-content contentB">
+  <h3>Data Table (TabB)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Example row, you can loop over data using Django later -->
+      <tr>
+        <td>1</td>
+        <td>Rajeev</td>
+        <td>rajeev@example.com</td>
+        <td>
+          <form method="post" action="/edit/1" style="display:inline;">
+            <button type="submit">Edit</button>
+          </form>
+          <form method="post" action="/delete/1" style="display:inline;">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Amit</td>
+        <td>amit@example.com</td>
+        <td>
+          <form method="post" action="/edit/2" style="display:inline;">
+            <button type="submit">Edit</button>
+          </form>
+          <form method="post" action="/delete/2" style="display:inline;">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+
+{% endblock %}
